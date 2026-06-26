@@ -3,107 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK Trends - Men's Fashion & Deals</title>
+    <title>NK Trends - Trending Gadgets & Fashion</title>
     <style>
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f7f9fc; margin: 0; padding: 0; text-align: center; color: #333; }
+        body { background-color: #f4f7f6; margin: 0; padding: 0; text-align: center; color: #333; }
+        header { background: linear-gradient(135deg, #2c3e50, #000000); color: white; padding: 40px 20px; }
+        header h1 { margin: 0; font-size: 32px; }
+        header p { opacity: 0.8; margin-top: 10px; }
         
-        /* Header & Logo */
-        header { background: linear-gradient(135deg, #111111, #2c3e50); color: white; padding: 30px 20px; }
-        header h1 { margin: 0; font-size: 28px; letter-spacing: 1px; }
-        header p { margin: 5px 0 0; opacity: 0.9; font-size: 16px; }
+        .category-nav { background: #fff; padding: 15px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .cat-btn { background: #eee; border: none; padding: 10px 18px; border-radius: 25px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .cat-btn:hover, .cat-btn.active { background: #ff4747; color: white; }
 
-        /* Categories Navigation */
-        .category-nav { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 15px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .cat-btn { background: #f0f2f5; border: none; padding: 10px 20px; font-size: 15px; font-weight: bold; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; color: #555; }
-        .cat-btn:hover, .cat-btn.active { background: #ff4747; color: white; box-shadow: 0 3px 10px rgba(255, 71, 71, 0.3); }
-
-        /* Product Grid */
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        
-        /* Product Card */
-        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #eef2f5; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .product-card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
         .product-card:hover { transform: translateY(-5px); }
-        .product-info { padding: 20px; text-align: center; }
-        .product-cat-tag { font-size: 12px; font-weight: bold; color: #ff4747; text-transform: uppercase; margin-bottom: 8px; display: inline-block; background: #ffebeb; padding: 3px 10px; border-radius: 10px; }
-        .product-title { font-size: 18px; font-weight: bold; margin: 10px 0; color: #222; }
-        .product-desc { font-size: 14px; color: #666; margin-bottom: 15px; line-height: 1.5; }
-        
-        /* Button */
-        .buy-btn { display: block; background: #ff4747; color: white; text-decoration: none; padding: 12px; text-align: center; font-weight: bold; font-size: 16px; border-radius: 0 0 12px 12px; transition: background 0.3s; }
-        .buy-btn:hover { background: #e03131; }
+        .product-title { font-size: 18px; font-weight: bold; margin: 10px 0; }
+        .buy-btn { background: #ff4747; color: white; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; display: block; }
+        .buy-btn:hover { background: #d93636; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>NK Trends</h1>
-    <p>علی ایکسپریس کی بہترین اور سستی پروڈکٹس ایک ہی جگہ پر</p>
+    <p>بہترین کوالٹی، سستی قیمت - آپ کا اپنا آن لائن اسٹور</p>
 </header>
 
 <div class="category-nav">
-    <button class="cat-btn active" onclick="filterCategory('all')">सब (All)</button>
-    <button class="cat-btn" onclick="filterCategory('watches')">स्मार्ट वॉचेस</button>
-    <button class="cat-btn" onclick="filterCategory('men_fashion')">मेन्स फैशन (Men's Clothing)</button>
-    <button class="cat-btn" onclick="filterCategory('slippers')">سلیپرز</button>
+    <button class="cat-btn active" onclick="filter('all')">تمام</button>
+    <button class="cat-btn" onclick="filter('gadget')">گیجٹس</button>
+    <button class="cat-btn" onclick="filter('fashion')">فیشن</button>
+    <button class="cat-btn" onclick="filter('home')">ہوم & دیگر</button>
 </div>
 
-<div class="container">
-    <div class="products-grid">
-        
-        <div class="product-card" data-category="watches">
-            <div class="product-info">
-                <span class="product-cat-tag">Smart Watches</span>
-                <div class="product-title">Smart Watch Ultra Series 9</div>
-                <p class="product-desc">فل ٹچ اسکرین، ہارٹ ریٹ مانیٹر اور طویل ترین بیٹری ٹائم کے ساتھ بہترین ڈیل۔</p>
-            </div>
-            <a href="https://s.click.aliexpress.com/e/_c3cScLdj" target="_blank" class="buy-btn">Buy on AliExpress</a>
-        </div>
-
-        <div class="product-card" data-category="men_fashion">
-            <div class="product-info">
-                <span class="product-cat-tag">Men's Fashion</span>
-                <div class="product-title">Premium Polo Shirts</div>
-                <p class="product-desc">اعلیٰ کوالٹی کپڑا، فلیٹ فٹنگ اور خوبصورت رنگوں میں دستیاب پولو شرٹس۔</p>
-            </div>
-            <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="buy-btn">Buy on AliExpress</a>
-        </div>
-
-        <div class="product-card" data-category="men_fashion">
-            <div class="product-info">
-                <span class="product-cat-tag">Men's Fashion</span>
-                <div class="product-title">Casual Pants & Trousers</div>
-                <p class="product-desc">روزمرہ پہننے کے لیے انتہائی آرام دہ اور مضبوط سلائی والے پینٹ اور ٹراؤزر۔</p>
-            </div>
-            <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="buy-btn">Buy on AliExpress</a>
-        </div>
-
-        <div class="product-card" data-category="slippers">
-            <div class="product-info">
-                <span class="product-cat-tag">Slippers</span>
-                <div class="product-title">Comfortable Soft Slippers</div>
-                <p class="product-desc">گھر اور باہر پہننے کے لیے انتہائی نرم، آرام دہ اور واٹر پروف سلیپرز۔</p>
-            </div>
-            <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="buy-btn">Buy on AliExpress</a>
-        </div>
-
+<div class="container" id="productContainer">
+    <!-- 1. Smart Watch -->
+    <div class="product-card" data-cat="gadget">
+        <div class="product-title">Smart Watch Ultra</div>
+        <a href="https://s.click.aliexpress.com/e/_c3cScLdj" target="_blank" class="buy-btn">ابھی خریدیں</a>
+    </div>
+    <!-- 2. Polo Shirt -->
+    <div class="product-card" data-cat="fashion">
+        <div class="product-title">Premium Polo Shirt</div>
+        <a href="https://s.click.aliexpress.com/e/_c3ez1pCv" target="_blank" class="buy-btn">ابھی خریدیں</a>
+    </div>
+    <!-- 3. Slippers -->
+    <div class="product-card" data-cat="fashion">
+        <div class="product-title">Comfortable Slippers</div>
+        <a href="https://s.click.aliexpress.com/e/_c3PlQtKd" target="_blank" class="buy-btn">ابھی خریدیں</a>
+    </div>
+    <!-- 4. Power Bank -->
+    <div class="product-card" data-cat="gadget">
+        <div class="product-title">Fast Power Bank</div>
+        <a href="https://s.click.aliexpress.com/e/_c3E7uDuD" target="_blank" class="buy-btn">ابھی خریدیں</a>
+    </div>
+    <!-- 5. Wireless Mouse -->
+    <div class="product-card" data-cat="gadget">
+        <div class="product-title">Rechargeable Mouse</div>
+        <a href="https://s.click.aliexpress.com/e/_c3bsIi8l" target="_blank" class="buy-btn">ابھی خریدیں</a>
+    </div>
+    <!-- 6. LED Strip -->
+    <div class="product-card" data-cat="home">
+        <div class="product-title">LED Strip Lights</div>
+        <a href="https://s.click.aliexpress.com/e/_c4CFXonj" target="_blank" class="buy-btn">ابھی خریدیں</a>
+    </div>
+    <!-- 7. Hair Trimmer -->
+    <div class="product-card" data-cat="home">
+        <div class="product-title">Professional Trimmer</div>
+        <a href="https://a.aliexpress.com/_c3MahRgt" target="_blank" class="buy-btn">ابھی خریدیں</a>
+    </div>
+    <!-- 8. Mini Fan -->
+    <div class="product-card" data-cat="gadget">
+        <div class="product-title">Portable Mini Fan</div>
+        <a href="https://s.click.aliexpress.com/e/_c3FSqsjb" target="_blank" class="buy-btn">ابھی خریدیں</a>
     </div>
 </div>
 
 <script>
-    function filterCategory(category) {
-        const buttons = document.querySelectorAll('.cat-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-
+    function filter(c) {
         const cards = document.querySelectorAll('.product-card');
         cards.forEach(card => {
-            if (category === 'all' || card.getAttribute('data-category') === category) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
+            card.style.display = (c === 'all' || card.getAttribute('data-cat') === c) ? 'flex' : 'none';
         });
     }
 </script>
