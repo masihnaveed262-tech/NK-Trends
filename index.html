@@ -1,76 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Deals Pakistan</title>
+    <title>NK Trends - Best Deals</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        p.urdu-text {
-            font-size: 20px;
-            color: #2c3e50;
-            line-height: 1.8;
-            direction: rtl;
-            margin-bottom: 40px;
-        }
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            max-width: 400px;
-            margin: 0 auto;
-            background: #fafafa;
-        }
-        .product-title {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        .btn-link {
-            display: inline-block;
-            background-color: #ff4747;
-            color: white;
-            padding: 12px 25px;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn-link:hover {
-            background-color: #e03131;
-        }
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f7f9fc; margin: 0; padding: 0; text-align: center; color: #333; }
+        
+        /* Header & Logo */
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 30px 20px; }
+        header h1 { margin: 0; font-size: 28px; }
+        header p { margin: 5px 0 0; opacity: 0.9; font-size: 16px; }
+
+        /* Categories Navigation */
+        .category-nav { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 15px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .cat-btn { background: #f0f2f5; border: none; padding: 10px 20px; font-size: 15px; font-weight: bold; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; color: #555; }
+        .cat-btn:hover, .cat-btn.active { background: #ff4747; color: white; box-shadow: 0 3px 10px rgba(255, 71, 71, 0.3); }
+
+        /* Product Grid */
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        /* Product Card */
+        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #eef2f5; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-info { padding: 20px; text-align: center; }
+        .product-cat-tag { font-size: 12px; font-weight: bold; color: #ff4747; text-transform: uppercase; margin-bottom: 8px; display: inline-block; background: #ffebeb; padding: 3px 10px; border-radius: 10px; }
+        .product-title { font-size: 18px; font-weight: bold; margin: 10px 0; color: #222; }
+        .product-desc { font-size: 14px; color: #666; margin-bottom: 15px; line-height: 1.5; }
+        
+        /* Button */
+        .buy-btn { display: block; background: #ff4747; color: white; text-decoration: none; padding: 12px; text-align: center; font-weight: bold; font-size: 16px; border-radius: 0 0 12px 12px; transition: background 0.3s; }
+        .buy-btn:hover { background: #e03131; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Smart Deals Pakistan</h1>
-    <p class="urdu-text">پاکستان میں دستیاب بہترین آن لائن ڈیلز۔ موبائل ایکسیسریز, فیشن اور دیگر معیاری مصنوعات یہاں دیکھیں۔ قیمت اور بہترین کوالٹی کا واحد مرکز۔</p>
+<header>
+    <h1>NK Trends</h1>
+    <p>علی ایکسپریس کی بہترین اور سستی پروڈکٹس ایک ہی جگہ پر</p>
+</header>
 
-    <div class="product-card">
-        <div class="product-title">Wireless Bluetooth Headphones</div>
-        <p>HD Sound | Long Battery | Best for Calls & Music</p>
-        <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="btn-link">Buy on AliExpress</a>
+<!-- کیٹیگریز کے بٹن -->
+<div class="category-nav">
+    <button class="cat-btn active" onclick="filterCategory('all')">সব (All)</button>
+    <button class="cat-btn" onclick="filterCategory('watches')">स्मार्ट वॉचेस</button>
+    <button class="cat-btn" onclick="filterCategory('suits')">سلوائے سوٹس</button>
+    <button class="cat-btn" onclick="filterCategory('slippers')">سلیپرز</button>
+</div>
+
+<div class="container">
+    <div class="products-grid">
+        
+        <!-- پروڈکٹ 1: ہیڈ فونز (جو لنک آپ نے دیا تھا) -->
+        <div class="product-card" data-category="watches">
+            <div class="product-info">
+                <span class="product-cat-tag">Electronics</span>
+                <div class="product-title">Wireless Bluetooth Headphones</div>
+                <p class="product-desc">ایچ ڈی ساؤنڈ اور جاندار بیٹری کے ساتھ بہترین کوالٹی ہیڈ فونز۔</p>
+            </div>
+            <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="buy-btn">Buy on AliExpress</a>
+        </div>
+
+        <!-- پروڈکٹ 2: اسمارٹ واچ (مثال کے طور پر) -->
+        <div class="product-card" data-category="watches">
+            <div class="product-info">
+                <span class="product-cat-tag">Smart Watches</span>
+                <div class="product-title">Smart Watch Ultra Series 9</div>
+                <p class="product-desc">فل ٹچ اسکرین، ہارٹ ریٹ مانیٹر اور طویل ترین بیٹری ٹائم کے ساتھ۔</p>
+            </div>
+            <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="buy-btn">Buy on AliExpress</a>
+        </div>
+
+        <!-- پروڈکٹ 3: سوٹ (مثال کے طور پر) -->
+        <div class="product-card" data-category="suits">
+            <div class="product-info">
+                <span class="product-cat-tag">Suits</span>
+                <div class="product-title">Gents Cotton Unstitched Suit</div>
+                <p class="product-desc">پریمیم کوالٹی کاٹن کپڑا، گرمیوں کے لیے بہترین اور پائیدار رنگ۔</p>
+            </div>
+            <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="buy-btn">Buy on AliExpress</a>
+        </div>
+
+        <!-- پروڈکٹ 4: سلیپرز (مثال کے طور پر) -->
+        <div class="product-card" data-category="slippers">
+            <div class="product-info">
+                <span class="product-cat-tag">Slippers</span>
+                <div class="product-title">Comfortable Soft Slippers</div>
+                <p class="product-desc">گھر اور باہر پہننے کے لیے انتہائی نرم، آرام دہ اور واٹر پروف سلیپرز۔</p>
+            </div>
+            <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="buy-btn">Buy on AliExpress</a>
+        </div>
+
     </div>
 </div>
+
+<script>
+    function filterCategory(category) {
+        // بٹنز کے ڈیزائن کو ایکٹیو کرنا
+        const buttons = document.querySelectorAll('.cat-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // پروڈکٹس کو فلٹر کرنا
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
