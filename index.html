@@ -1,93 +1,25 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK Trends - Trending Gadgets & Fashion</title>
+    <title>NK Trends</title>
     <style>
-        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f6; margin: 0; padding: 0; text-align: center; color: #333; }
-        header { background: linear-gradient(135deg, #2c3e50, #000000); color: white; padding: 40px 20px; }
-        header h1 { margin: 0; font-size: 32px; }
-        header p { opacity: 0.8; margin-top: 10px; }
-        
-        .category-nav { background: #fff; padding: 15px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .cat-btn { background: #eee; border: none; padding: 10px 18px; border-radius: 25px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .cat-btn:hover, .cat-btn.active { background: #ff4747; color: white; }
-
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .product-card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-title { font-size: 18px; font-weight: bold; margin: 10px 0; }
-        .buy-btn { background: #ff4747; color: white; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; display: block; }
-        .buy-btn:hover { background: #d93636; }
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .product { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .btn { background: #ff4747; color: white; padding: 8px 12px; text-decoration: none; border-radius: 5px; }
     </style>
 </head>
 <body>
+    <h1>NK Trends - تمام پروڈکٹس</h1>
 
-<header>
-    <h1>NK Trends</h1>
-    <p>بہترین کوالٹی، سستی قیمت - آپ کا اپنا آن لائن اسٹور</p>
-</header>
+    <!-- پروڈکٹ 1 -->
+    <div class="product"><span>سمارٹ واچ</span><a href="" class="btn">خریدیں</a></div>
+    
+    <!-- پروڈکٹ 2 -->
+    <div class="product"><span>پولو شرٹ</span><a href="اپنا_علی_ایکسپریس_لنک" class="btn">خریدیں</a></div>
 
-<div class="category-nav">
-    <button class="cat-btn active" onclick="filter('all')">تمام</button>
-    <button class="cat-btn" onclick="filter('gadget')">گیجٹس</button>
-    <button class="cat-btn" onclick="filter('fashion')">فیشن</button>
-    <button class="cat-btn" onclick="filter('home')">ہوم & دیگر</button>
-</div>
-
-<div class="container" id="productContainer">
-    <!-- 1. Smart Watch -->
-    <div class="product-card" data-cat="gadget">
-        <div class="product-title">Smart Watch Ultra</div>
-        <a href="https://s.click.aliexpress.com/e/_c3cScLdj" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-    <!-- 2. Polo Shirt -->
-    <div class="product-card" data-cat="fashion">
-        <div class="product-title">Premium Polo Shirt</div>
-        <a href="https://s.click.aliexpress.com/e/_c3ez1pCv" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-    <!-- 3. Slippers -->
-    <div class="product-card" data-cat="fashion">
-        <div class="product-title">Comfortable Slippers</div>
-        <a href="https://s.click.aliexpress.com/e/_c3PlQtKd" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-    <!-- 4. Power Bank -->
-    <div class="product-card" data-cat="gadget">
-        <div class="product-title">Fast Power Bank</div>
-        <a href="https://s.click.aliexpress.com/e/_c3E7uDuD" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-    <!-- 5. Wireless Mouse -->
-    <div class="product-card" data-cat="gadget">
-        <div class="product-title">Rechargeable Mouse</div>
-        <a href="https://s.click.aliexpress.com/e/_c3bsIi8l" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-    <!-- 6. LED Strip -->
-    <div class="product-card" data-cat="home">
-        <div class="product-title">LED Strip Lights</div>
-        <a href="https://s.click.aliexpress.com/e/_c4CFXonj" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-    <!-- 7. Hair Trimmer -->
-    <div class="product-card" data-cat="home">
-        <div class="product-title">Professional Trimmer</div>
-        <a href="https://a.aliexpress.com/_c3MahRgt" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-    <!-- 8. Mini Fan -->
-    <div class="product-card" data-cat="gadget">
-        <div class="product-title">Portable Mini Fan</div>
-        <a href="https://s.click.aliexpress.com/e/_c3FSqsjb" target="_blank" class="buy-btn">ابھی خریدیں</a>
-    </div>
-</div>
-
-<script>
-    function filter(c) {
-        const cards = document.querySelectorAll('.product-card');
-        cards.forEach(card => {
-            card.style.display = (c === 'all' || card.getAttribute('data-cat') === c) ? 'flex' : 'none';
-        });
-    }
-</script>
+    <!-- اسی طرح آپ نیچے نئی لائنیں بناتے جائیں -->
+    <div class="product"><span>نئی پروڈکٹ کا نام</span><a href="لنک" class="btn">خریدیں</a></div>
 
 </body>
 </html>
