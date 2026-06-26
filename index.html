@@ -1,123 +1,76 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK Trends - AliExpress Best Deals</title>
+    <title>Smart Deals Pakistan</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f5f7fa; color: #333; }
-        header { background-color: #1a1a1a; color: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-size: 24px; font-weight: bold; color: #ff4747; text-decoration: none; }
-        .logo span { color: #fff; }
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul li a { color: #ddd; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: #ff4747; }
-        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); color: white; text-align: center; padding: 40px 20px; }
-        .hero h1 { font-size: 32px; margin-bottom: 10px; color: #ff4747; }
-        .hero p { font-size: 18px; max-width: 700px; margin: 0 auto; color: #ccc; }
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .section-title { font-size: 24px; margin-bottom: 25px; border-bottom: 3px solid #ff4747; padding-bottom: 8px; display: inline-block; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .product-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border: 1px solid #eee; display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-img { width: 100%; height: 220px; background-color: #eaeaea; background-size: cover; background-position: center; }
-        .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-cat { font-size: 12px; color: #ff4747; font-weight: bold; margin-bottom: 5px; }
-        .product-title { font-size: 18px; margin-bottom: 10px; color: #1a1a1a; height: 50px; overflow: hidden; }
-        .product-price { font-size: 20px; font-weight: bold; color: #222; margin-bottom: 15px; }
-        .btn-buy { display: block; background-color: #ff4747; color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
-        .btn-buy:hover { background-color: #e03434; }
-        footer { background-color: #1a1a1a; color: #999; text-align: center; padding: 25px 20px; margin-top: 50px; font-size: 14px; }
-        .disclaimer { font-size: 12px; color: #666; max-width: 800px; margin: 10px auto 0 auto; }
-        .page { display: none; }
-        .page.active { display: block; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p.urdu-text {
+            font-size: 20px;
+            color: #2c3e50;
+            line-height: 1.8;
+            direction: rtl;
+            margin-bottom: 40px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fafafa;
+        }
+        .product-title {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .btn-link {
+            display: inline-block;
+            background-color: #ff4747;
+            color: white;
+            padding: 12px 25px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-link:hover {
+            background-color: #e03131;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo" onclick="showPage('home')">NK<span>Trends</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#" id="nav-home" class="active" onclick="showPage('home')">ہوم پیج</a></li>
-                    <li><a href="#" id="nav-electronics" onclick="showPage('electronics')">الیکٹرانکس</a></li>
-                    <li><a href="#" id="nav-clothing" onclick="showPage('clothing')">کپڑے</a></li>
-                    <li><a href="#" id="nav-watches" onclick="showPage('watches')">گھڑیاں</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<div class="container">
+    <h1>Smart Deals Pakistan</h1>
+    <p class="urdu-text">پاکستان میں دستیاب بہترین آن لائن ڈیلز۔ موبائل ایکسیسریز, فیشن اور دیگر معیاری مصنوعات یہاں دیکھیں۔ قیمت اور بہترین کوالٹی کا واحد مرکز۔</p>
 
-    <section class="hero">
-        <h1>AliExpress کے بہترین اور سستے پروڈکٹس</h1>
-        <p>کوالٹی اور ڈسکاؤنٹ والے پروڈکٹس ایک ہی جگہ پر۔ نیچے کیٹیگری منتخب کریں اور شاپنگ کریں۔</p>
-    </section>
-
-    <div class="container">
-        
-        <!-- HOME PAGE -->
-        <div id="page-home" class="page active">
-            <h2 class="section-title">ٹاپ ڈیلز (Featured Products)</h2>
-            <div class="grid">
-                <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500')"></div>
-                    <div class="product-info">
-                        <div>
-                            <span class="product-cat">Electronics</span>
-                            <h3 class="product-title">Wireless Bluetooth Headphones - باکمال ساؤنڈ</h3>
-                        </div>
-                        <div>
-                            <div class="product-price">$19.99</div>
-                            <a href="YOUR_LINK" target="_blank" class="btn-buy">خریدیں (AliExpress)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ELECTRONICS PAGE -->
-        <div id="page-electronics" class="page">
-            <h2 class="section-title">الیکٹرانکس (Electronics)</h2>
-            <div class="grid">
-                <!-- یہاں الیکٹرانکس کے پروڈکٹس آئیں گے -->
-            </div>
-        </div>
-
-        <!-- CLOTHING PAGE -->
-        <div id="page-clothing" class="page">
-            <h2 class="section-title">کپڑے اور جوتے (Clothing)</h2>
-            <div class="grid">
-                <!-- یہاں کپڑوں کے پروڈکٹس آئیں گے -->
-            </div>
-        </div>
-
-        <!-- WATCHES PAGE -->
-        <div id="page-watches" class="page">
-            <h2 class="section-title">گھڑیاں (Watches)</h2>
-            <div class="grid">
-                <!-- یہاں گھڑیوں کے پروڈکٹس آئیں گے -->
-            </div>
-        </div>
-
+    <div class="product-card">
+        <div class="product-title">Wireless Bluetooth Headphones</div>
+        <p>HD Sound | Long Battery | Best for Calls & Music</p>
+        <a href="https://s.click.aliexpress.com/e/_c3VVwP93" target="_blank" class="btn-link">Buy on AliExpress</a>
     </div>
+</div>
 
-    <footer>
-        <p>&copy; 2026 NK Trends. All Rights Reserved.</p>
-        <p class="disclaimer">ڈس کلیمر: ہم علی ایکسپریس کے ایفلیٹ پارٹنر ہیں۔ جب آپ یہاں دیے گئے لنک سے کوئی چیز خریدتے ہیں تو ہمیں اس کا کچھ فیصد کمیشن ملتا ہے۔</p>
-    </footer>
-
-    <script>
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            const navLinks = document.querySelectorAll('nav ul li a');
-            navLinks.forEach(link => link.classList.remove('active'));
-            document.getElementById('page-' + pageId).classList.add('active');
-            document.getElementById('nav-' + pageId).classList.add('active');
-        }
-    </script>
 </body>
 </html>
