@@ -1,6 +1,234 @@
 <!DOCTYPE html>
 <html lang="ur">
+<head><!DOCTYPE html>
+<html lang="ur">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NK Trends | Men's Fashion & Gadgets</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#222;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#111,#2d2d2d);
+padding:20px;
+text-align:center;
+color:#fff;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+header h1{
+font-size:30px;
+color:#FFD700;
+margin-bottom:5px;
+}
+
+header p{
+font-size:15px;
+color:#ddd;
+}
+
+/* SEARCH */
+
+.search{
+padding:15px;
+background:white;
+}
+
+.search input{
+
+width:100%;
+padding:14px;
+
+border-radius:30px;
+border:1px solid #ddd;
+
+font-size:16px;
+
+}
+
+/* CATEGORY */
+
+.categories{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+padding:15px;
+
+}
+
+.categories button{
+
+padding:13px;
+
+border:none;
+
+border-radius:12px;
+
+background:#111;
+
+color:white;
+
+font-size:15px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.categories button:hover{
+
+background:#FFD700;
+
+color:#111;
+
+}
+
+/* PRODUCTS */
+
+#products{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+
+gap:15px;
+
+padding:15px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 4px 15px rgba(0,0,0,.12);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+}
+
+.card img{
+
+width:100%;
+
+height:180px;
+
+object-fit:cover;
+
+}
+
+.card h3{
+
+padding:10px;
+
+font-size:16px;
+
+}
+
+.price{
+
+padding:0 10px;
+
+font-weight:bold;
+
+color:#008000;
+
+}
+
+.buy{
+
+display:block;
+
+margin:12px;
+
+padding:12px;
+
+background:#111;
+
+color:white;
+
+text-align:center;
+
+text-decoration:none;
+
+border-radius:10px;
+
+font-weight:bold;
+
+}
+
+.buy:hover{
+
+background:#FFD700;
+
+color:#111;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:24px;
+
+}
+
+#products{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>NK Trends</h1>
+
+<p>Men's Fashion • Watches • Gadgets</p>
+
+</header>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NK Trends</title>
