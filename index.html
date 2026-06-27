@@ -1,284 +1,24 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK Trends</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a1a; color: #d4af37; text-align: center; margin: 0; padding: 0; }
-        .header { padding: 20px; background: #000; border-bottom: 2px solid #d4af37; }
-        .logo { width: 150px; border-radius: 50%; border: 2px solid #d4af37; }
-        .container { max-width: 600px; margin: 20px auto; padding: 10px; }
-        .card { background: #262626; border: 1px solid #d4af37; padding: 15px; margin: 15px 0; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
-        .card:hover { background: #333; }
-        .btn { background-color: #d4af37; color: #000; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; border: none; }
-        footer { margin-top: 30px; font-size: 0.8em; color: #777; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NK Trends Store</title>
 </head>
-<body>
 
-    <div class="header">
-        <img src="https://raw.githubusercontent.com/masihnaveed262-tech/NK-Trends/main/17132.png" alt="NK Trends Logo" class="logo">
-        <h1>NK Trends</h1>
-        <p>Elite Menswear & Gadgets - Daska</p>
-    </div>
-
-    <div class="container">
-        <!-- کیٹیگریز شروع -->
-        <div class="card">
-            <span>ا</span>
-            <a href= class=>/a>
-        </div>
-        
-        <div class="card">
-            <span>فیشن جیولری سیٹ</span>
-            <a href=
-class=>/a>
-        </div>
-        
-        <div class="card">
-            <span>مردانہ ملبوسات</span>
-            <a href="#" class=>/a>
-        </div>
-        <!-- کیٹیگریز ختم -->
-    </div>
-
-    <footer>
-        <p>مصنوعات کے بہترین انتخاب کے لیے NK Trends</p>
-    </footer>
-
-</body>
-</html><!-- Firebase Start -->
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-
-<script>
-const firebaseConfig = {
-  apiKey: "PASTE_KEY",
-  authDomain: "PASTE_DOMAIN",
-  projectId: "PASTE_ID"
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-</script><script>
-function loadProducts(){name = Smart Watch Pro
-price = 29
-image = (image URL)
-link = https://aliexpress.com
-
-const container = document.getElementById("product-list");
-if(!container) return;
-
-container.innerHTML = "";
-
-db.collection("products").get().then(snapshot => {
-
-snapshot.forEach(doc => {
-
-let p = doc.data();
-
-container.innerHTML += `
-<div class="card">
-
-<img src="${p.image}" style="width:100%">
-
-<div class="card-body">
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-<a href="https://www.aliexpress.com" target="_blank" style="display:inline-block;padding:10px 20px;background:red;color:white;text-decoration:none;border-radius:5px;खरीद
-</a>
-<script>
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID"
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-</script>
-<div id="product-list"></div>
-
-<script>
-function loadProducts(){
-
-const box = document.getElementById("product-list");
-box.innerHTML = "";
-
-db.collection("products").get().then(snapshot => {
-
-snapshot.forEach(doc => {
-
-let p = doc.data();
-
-box.innerHTML += `
-<div class="card">
-<img src="${p.image}" style="width:100%">
-<h3>${p.name}</h3>
-<p>$${p.price}</p>
-<a href="${p.link}" target="_blank">Buy Now</a>
-</div>
-`;
-
-});
-
-});
-
-}
-
-loadProducts();
-</script>
-
-<h3>${p.name}</h3>
-
-<p>💰 $${p.price}</p>
-
-<a href="${p.link}" target="_blank" class="buy-btn">
-Buy Now 🛒
-</a>
-
-</div>
-
-</div>
-`;
-
-});
-
-});
-
-}
-
-loadProducts();
-</script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-<div style="border:1px solid #ddd;padding:10px;border-radius:10px;width:200px;text-align:center;">
-
-  <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-
-  <h3>Smart Watch</h3>
-
-  <p>Price: Rs 2500</p>
-
-  <a href="https://www.aliexpress.com" target="_blank"
-  style="display:inline-block;padding:8px 15px;background:green;color:white;text-decoration:none;border-radius:5px;">
-  Buy Now
-  </a>
-
-</div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;">
-
-<a href="https://www.aliexpress.com" target="_blank"
-style="padding:10px 15px;background:red;color:white;text-decoration:none;border-radius:5px;">
-خریدیں 1
-</a>
-
-<a href="https://www.aliexpress.com" target="_blank"
-style="padding:10px 15px;background:red;color:white;text-decoration:none;border-radius:5px;">
-خریدیں 2
-</a>
-
-<a href="https://www.aliexpress.com" target="_blank"
-style="padding:10px 15px;background:red;color:white;text-decoration:none;border-radius:5px;">
-خریدیں 3
-</a>
-
-</div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;">
-
-<a href="https://www.aliexpress.com" target="_blank"
-style="padding:10px 15px;background:red;color:white;text-decoration:none;border-radius:5px;">
-خریدیں 1
-</a>
-
-<a href="https://www.aliexpress.com" target="_blank"
-style="padding:10px 15px;background:red;color:white;text-decoration:none;border-radius:5px;">
-خریدیں 2
-</a>
-
-<a href="https://www.aliexpress.com" target="_blank"
-style="padding:10px 15px;background:red;color:white;text-decoration:none;border-radius:5px;">
-خریدیں 3
-</a>
-
-</div>
-<div style="text-align:center;font-family:Arial;">
-
-  <h2>NK Trends Shop</h2>
-
-  <div style="border:1px solid #ddd;padding:15px;margin:10px;border-radius:10px;display:inline-block;">
-
-    <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-
-    <h3>Product 1</h3>
-
-    <p>Best Quality Product</p>
-
-    <a href="https://www.aliexpress.com" target="_blank"
-    style="display:inline-block;padding:10px 20px;background:red;color:white;text-decoration:none;border-radius:5px;">
-        <div style="font-family:Arial;text-align:center;">
-
-  <h2>NK Trends Store</h2>
-
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
-
-    <!-- Product 1 -->
-    <div style="border:1px solid #ddd;width:180px;padding:10px;border-radius:10px;">
-      <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-      <h3>Watch</h3>
-      <p>Rs 2500</p>
-      <a href="https://www.aliexpress.com" target="_blank"
-      style="display:inline-block;padding:8px 12px;background:red;color:white;text-decoration:none;border-radius:5px;">
-      خریدیں
-      </a>
-    </div>
-
-    <!-- Product 2 -->
-    <div style="border:1px solid #ddd;width:180px;padding:10px;border-radius:10px;">
-      <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-      <h3>Shoes</h3>
-      <p>Rs 3000</p>
-      <a href="https://www.aliexpress.com" target="_blank"
-      style="display:inline-block;padding:8px 12px;background:red;color:white;text-decoration:none;border-radius:5px;">
-      خریدیں
-      </a>
-    </div>
-
-    <!-- Product 3 -->
-    <div style="border:1px solid #ddd;width:180px;padding:10px;border-radius:10px;">
-      <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-      <h3>Bag</h3>
-      <p>Rs 1800</p>
-      <a href="https://www.aliexpress.com" target="_blank"
-      style="display:inline-block;padding:8px 12px;background:red;color:white;text-decoration:none;border-radius:5px;">
-      خریدیں
-      </a>
-    </div>
-
-  </div>
-        </div>
-    خریدیں
-    </a>
-
-  </div>
-
-</div>
-<div style="font-family:Arial;background:#f5f5f5;padding:10px;">
+<body style="margin:0;font-family:Arial;background:#f5f5f5;">
 
   <!-- HEADER -->
-  <div style="background:black;color:white;padding:15px;text-align:center;border-radius:10px;">
+  <div style="text-align:center;background:black;color:white;padding:20px;">
     <h1 style="margin:0;">NK Trends Store</h1>
     <p style="margin:5px;">Best Quality Products</p>
   </div>
 
-  <br>
-
   <!-- PRODUCTS -->
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;padding:20px;">
 
-    <!-- Product -->
-    <div style="background:white;border-radius:10px;width:180px;padding:10px;text-align:center;">
+    <!-- PRODUCT 1 -->
+    <div style="background:white;width:180px;padding:10px;border-radius:10px;text-align:center;">
       <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
       <h3>Watch</h3>
       <p>Rs 2500</p>
@@ -288,7 +28,8 @@ style="padding:10px 15px;background:red;color:white;text-decoration:none;border-
       </a>
     </div>
 
-    <div style="background:white;border-radius:10px;width:180px;padding:10px;text-align:center;">
+    <!-- PRODUCT 2 -->
+    <div style="background:white;width:180px;padding:10px;border-radius:10px;text-align:center;">
       <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
       <h3>Shoes</h3>
       <p>Rs 3000</p>
@@ -298,9 +39,9 @@ style="padding:10px 15px;background:red;color:white;text-decoration:none;border-
       </a>
     </div>
 
-    <div style="background:white;border-radius:10px;width:180px;padding:10px;text-align:center;">
+    <!-- PRODUCT 3 -->
+    <div style="background:white;width:180px;padding:10px;border-radius:10px;text-align:center;">
       <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-        
       <h3>Bag</h3>
       <p>Rs 1800</p>
       <a href="https://www.aliexpress.com" target="_blank"
@@ -310,37 +51,6 @@ style="padding:10px 15px;background:red;color:white;text-decoration:none;border-
     </div>
 
   </div>
-    
-</div>
-    <div style="font-family:Arial;text-align:center;padding:20px;">
 
-  <h2>NK Trends Store</h2>
-
-  <p>Best Quality Products</p>
-
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
-
-    <div style="border:1px solid #ddd;width:180px;padding:10px;border-radius:10px;background:white;">
-      <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-      <h3>Watch</h3>
-      <p>Rs 2500</p>
-      <a href="https://www.aliexpress.com" target="_blank"
-      style="display:inline-block;padding:8px 12px;background:red;color:white;text-decoration:none;border-radius:5px;">
-      خریدیں
-      </a>
-    </div>
-
-    <div style="border:1px solid #ddd;width:180px;padding:10px;border-radius:10px;background:white;">
-      <img src="https://via.placeholder.com/150" style="width:100%;border-radius:10px;">
-      <h3>Shoes</h3>
-      <p>Rs 3000</p>
-      <a href="https://www.aliexpress.com" target="_blank"
-      style="display:inline-block;padding:8px 12px;background:red;color:white;text-decoration:none;border-radius:5px;">
-      خریدیں
-      </a>
-    </div>
-
-  </div>
-
-    </div>
-
+</body>
+</html>
