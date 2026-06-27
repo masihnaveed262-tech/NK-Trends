@@ -22,7 +22,61 @@ background:#f5f5f5;
 color:#222;
 }
 
-/* HEADER */
+/* HEADER */<!-- سرچ باکس -->
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="مصنوعات تلاش کریں..."
+onkeyup="searchProducts()">
+
+</div>
+
+<!-- کیٹیگری بٹن -->
+
+<div class="categories">
+
+<button onclick="filterProducts('all')">
+تمام مصنوعات
+</button>
+
+<button onclick="filterProducts('watch')">
+سمارٹ واچ
+</button>
+
+<button onclick="filterProducts('shoes')">
+جوتے
+</button>
+
+<button onclick="filterProducts('earbuds')">
+ایئربڈز
+</button>
+
+<button onclick="filterProducts('powerbank')">
+پاور بینک
+</button>
+
+<button onclick="filterProducts('fashion')">
+مردانہ فیشن
+</button>
+
+<button onclick="filterProducts('bags')">
+بیگز
+</button>
+
+<button onclick="filterProducts('accessories')">
+لوازمات
+</button>
+
+</div>
+
+<!-- پروڈکٹس یہاں ظاہر ہوں گے -->
+
+<div id="products">
+
+</div>
 
 header{
 background:linear-gradient(135deg,#111,#2d2d2d);
