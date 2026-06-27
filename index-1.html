@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NK Trends</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f4f4f4;color:#222}
+header{background:#111;color:#fff;text-align:center;padding:18px}
+header h1{color:#ffd700}
+.search{padding:15px;text-align:center}
+.search input{width:95%;max-width:500px;padding:12px;border-radius:25px;border:1px solid #ccc}
+.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
+.categories button{padding:12px;border:none;border-radius:10px;background:#fff;box-shadow:0 2px 6px #ccc;font-weight:bold;cursor:pointer}
+#products{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:15px;padding:15px}
+.card{background:#fff;border-radius:12px;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,.12);text-align:center}
+.card img{width:100%;border-radius:10px}
+.card a{display:block;margin-top:10px;padding:10px;background:#111;color:#fff;text-decoration:none;border-radius:8px}
+</style>
+</head>
+<body>
+<header><h1>NK Trends</h1><p>2026 NK Trends</p></header>
+<div class="search"><input id="search" onkeyup="render(current)" placeholder="مصنوعات تلاش کریں"></div>
+<div class="categories">
+<button onclick="render('all')">سب</button>
+<button onclick="render('watch')">گھڑیاں</button>
+<button onclick="render('shoes')">جوتے</button>
+<button onclick="render('gadgets')">گیجٹس</button>
+</div>
+<div id="products"></div>
+<script>
+const items=[
+{name:"سمارٹ گھڑی",cat:"watch",price:"4999",img:"https://via.placeholder.com/300",link:"https://www.aliexpress.com/wholesale?SearchText=smart+watch"},
+{name:"فٹنس بینڈ",cat:"watch",price:"3500",img:"https://via.placeholder.com/300",link:"https://www.aliexpress.com/wholesale?SearchText=fitness+band"},
+{name:"مردانہ جوتے",cat:"shoes",price:"6500",img:"https://via.placeholder.com/300",link:"https://www.aliexpress.com/wholesale?SearchText=mens+shoes"},
+{name:"ایئربڈز",cat:"gadgets",price:"3200",img:"https://via.placeholder.com/300",link:"https://www.aliexpress.com/wholesale?SearchText=wireless+earbuds"},
+{name:"پاور بینک",cat:"gadgets",price:"4500",img:"https://via.placeholder.com/300",link:"https://www.aliexpress.com/wholesale?SearchText=power+bank"},
+{name:"ہیڈفون",cat:"gadgets",price:"4200",img:"https://via.placeholder.com/300",link:"https://www.aliexpress.com/wholesale?SearchText=headphones"}
+];
+let current="all";
+function render(cat){
+ current=cat;
+ const q=document.getElementById('search').value.toLowerCase();
+ let h="";
+ items.filter(i=>(cat==="all"||i.cat===cat)&&i.name.toLowerCase().includes(q)).forEach(i=>{
+ h+=`<div class="card"><img src="${i.img}"><h3>${i.name}</h3><p>قیمت: ${i.price}</p><a target="_blank" href="${i.link}">خریدیں</a></div>`;
+ });
+ document.getElementById("products").innerHTML=h;
+}
+render("all");
+</script>
+</body></html>
