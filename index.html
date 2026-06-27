@@ -8,6 +8,66 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial, sans-serif;
+}@media (max-width: 768px){
+
+/* PAGE SPACING */
+body{
+padding:0;
+margin:0;
+}
+
+/* HEADER TEXT */
+header h1{
+font-size:20px;
+line-height:1.3;
+}
+
+/* SEARCH BOX */
+.search input{
+width:95%;
+padding:12px;
+font-size:14px;
+border-radius:25px;
+}
+
+/* CATEGORY GRID MOBILE */
+.categories{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+padding:10px;
+}
+
+.categories div{
+padding:12px;
+font-size:14px;
+}
+
+/* PRODUCT CARDS MOBILE */
+.card{
+margin-bottom:15px;
+padding:10px;
+border-radius:12px;
+}
+
+/* PRODUCT IMAGE */
+.card img{
+width:100%;
+height:auto;
+}
+
+/* BUY BUTTON */
+.card a{
+width:100%;
+display:block;
+padding:10px;
+font-size:14px;
+}
+
+/* MAKE GRID SINGLE COLUMN IF NEEDED */
+#products{
+padding:10px;
+}
+
 }
 
 body{
