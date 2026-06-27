@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel - NK Trends</title>
+
+<style>
+body{
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+input, button{
+padding:10px;
+margin:10px;
+width:80%;
+max-width:400px;
+border-radius:8px;
+border:none;
+}
+
+button{
+background:gold;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+.card{
+background:#1a1a1a;
+padding:10px;
+margin:10px;
+border-radius:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🔥 NK Trends Admin Panel</h1>
+
+<input id="name" placeholder="Product Name"><br>
+<input id="price" placeholder="Price"><br>
+<input id="image" placeholder="Image URL"><br>
+<input id="link" placeholder="Affiliate Link"><br>
+
+<button onclick="addProduct()">Add Product</button>
+
+<h2>Products List</h2>
+<div id="list"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+function addProduct(){
+
+let name = document.getElementById("name").value;
+let price = document.getElementById("price").value;
+let image = document.getElementById("image").value;
+let link = document.getElementById("link").value;
+
+db.collection("products").add({
+name:name,
+price:price,
+image:image,
+link:link
+});
+
+alert("Product Added ✅");
+loadProducts();
+}
+
+function loadProducts(){
+
+let list = document.getElementById("list");
+list.innerHTML = "";
+
+db.collection("products").get().then(snapshot=>{
+
+snapshot.forEach(doc=>{
+
+let p = doc.data();
+
+list.innerHTML += `
+<div class="card">
+<h3>${p.name}</h3>
+<p>$${p.price}</p>
+</div>
+`;
+
+});
+
+});
+
+}
+
+loadProducts();
+
+</script>
+
+</body>
+  </html>
